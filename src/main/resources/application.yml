@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: expenses-control
+  data:
+    mongodb:
+      uri: mongodb+srv://admin:ySNSYAt6qKy7cCyz@expenses-control.pdk6rnr.mongodb.net/?retryWrites=true&w=majority
+      database: expenses-control
