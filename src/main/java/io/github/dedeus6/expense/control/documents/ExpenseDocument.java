@@ -1,5 +1,6 @@
 package io.github.dedeus6.expense.control.documents;
 
+import io.github.dedeus6.expense.control.enums.ExpenseCategoryEnum;
 import io.github.dedeus6.expense.control.enums.ExpenseStatusEnum;
 import lombok.Builder;
 import lombok.Data;
@@ -25,5 +26,6 @@ public class ExpenseDocument {
     private LocalDateTime paymentDate;
     private BigDecimal value;
     private ExpenseStatusEnum status;
+    private ExpenseCategoryEnum category;
 
 }

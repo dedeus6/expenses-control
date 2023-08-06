@@ -1,5 +1,7 @@
 package io.github.dedeus6.expense.control.controllers.model.responses;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import io.github.dedeus6.expense.control.enums.ExpenseCategoryEnum;
 import io.github.dedeus6.expense.control.enums.ExpenseStatusEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ExpenseCreateResponse {
 
     private String id;
@@ -19,5 +22,6 @@ public class ExpenseCreateResponse {
     private LocalDateTime paymentDate;
     private BigDecimal value;
     private ExpenseStatusEnum status;
+    private String category;
 
 }

@@ -1,5 +1,6 @@
 package io.github.dedeus6.expense.control.dto;
 
+import io.github.dedeus6.expense.control.enums.ExpenseCategoryEnum;
 import io.github.dedeus6.expense.control.enums.ExpenseStatusEnum;
 import lombok.Builder;
 import lombok.Data;
@@ -18,4 +19,5 @@ public class ExpenseDTO {
     private LocalDateTime paymentDate;
     private BigDecimal value;
     private ExpenseStatusEnum status;
+    private ExpenseCategoryEnum category;
 }

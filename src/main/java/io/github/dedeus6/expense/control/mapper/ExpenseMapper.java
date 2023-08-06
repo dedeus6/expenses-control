@@ -5,16 +5,16 @@ import io.github.dedeus6.expense.control.controllers.model.responses.ExpenseCrea
 import io.github.dedeus6.expense.control.documents.ExpenseDocument;
 import io.github.dedeus6.expense.control.dto.ExpenseDTO;
 import org.mapstruct.Mapper;
-import org.springframework.stereotype.Component;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
-@Component
+
 @Mapper(componentModel = SPRING)
 public interface ExpenseMapper {
 
     ExpenseDTO createRequestToDto(ExpenseCreateRequest request);
     ExpenseCreateResponse dtoToResponse(ExpenseDTO dto);
     ExpenseDocument dtoToDocument(ExpenseDTO dto);
+    ExpenseDTO documentToDto(ExpenseDocument document);
 
 }

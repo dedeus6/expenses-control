@@ -18,6 +18,6 @@ public class ExpenseService {
         return Mono.just(expense)
                 .map(expenseMapper::dtoToDocument)
                 .flatMap(expenseRepository::save)
-                .thenReturn(expense);
+                .map(expenseMapper::documentToDto);
     }
 }

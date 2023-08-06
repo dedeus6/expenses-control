@@ -1,7 +1,8 @@
 package io.github.dedeus6.expense.control.controllers.model.requests;
 
+import io.github.dedeus6.expense.control.enums.ExpenseCategoryEnum;
+import io.github.dedeus6.expense.control.validator.EnumValue;
 import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -21,7 +22,6 @@ public class ExpenseCreateRequest {
     @NotBlank(message = REQUIRED_TITLE)
     private String title;
 
-    @Max(value = 200, message = MAX_LIMIT_DESCRIPTION_SIZE)
     private String description;
 
     @NotNull(message = REQUIRED_DATE_TO_PAY)
@@ -31,5 +31,9 @@ public class ExpenseCreateRequest {
     @NotNull(message = REQUIRED_VALUE)
     @Digits(integer = 10, fraction = 2, message = INVALID_VALUE_FORMAT)
     private BigDecimal value;
+
+    @NotBlank(message = REQUIRED_CATEGORY)
+    @EnumValue(enumClass = ExpenseCategoryEnum.class, message = INVALID_ENUM_CATEGORY_VALUE)
+    private String category;
 
 }
